@@ -1,0 +1,52 @@
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '../atoms/Typography';
+
+const useStyles = makeStyles({
+  title: {
+    fontSize: 14,
+    margin: 24,
+  }
+});
+
+const BodyCard: React.FC = () => {
+  const classes = useStyles();
+
+  const goToExternalSite = (): void => {
+    window.location.href = 'https://sign-dxuu.onrender.com/';
+  };
+
+  return (
+    <Card variant="outlined">
+      <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          name
+        </Typography>
+        <Typography variant="h5" component="h2">
+          塩見 昌士
+        </Typography>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          comment
+        </Typography>
+        <Typography variant="h5" component="h2">
+          サービス「資格とろ」を作成中
+        </Typography>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Created application
+        </Typography>
+        <Typography variant="h5" component="h2">
+          <button onClick={goToExternalSite}>星の図鑑</button>
+        </Typography>
+        <Typography variant="h5" component="h2">
+          <a href="https://dagashi.onrender.com/" target="_blank" rel="noopener noreferrer">
+            だがしや
+          </a>
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default BodyCard;
